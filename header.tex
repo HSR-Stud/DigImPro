@@ -1,0 +1,128 @@
+% Genereller Header
+\documentclass[10pt,twoside,a4paper,fleqn]{article}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
+\usepackage[ngerman]{babel,varioref}
+\usepackage[utf8]{inputenc}
+
+% Pakete
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{fancybox}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{lastpage}
+\usepackage{wrapfig}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{pdflscape} % landscape
+\usepackage{multirow} % zellen in tabellen verbinden
+\usepackage{multicol} 
+\usepackage{slashbox} % getrennte zelle in tabelle
+\usepackage{bm}       % Bold Math
+
+% \usepackage{array} % anordnung in tabellen
+
+%%%%%%%%%%%%%%%%%%%%
+% Generelle Makros %
+%%%%%%%%%%%%%%%%%%%%
+\newcommand{\formelbuch}[1]{$_{\textcolor{red}{\mbox{\small{S#1}}}}$}
+\newcommand{\gonzales}[1]{$_{\textcolor{red}{\mbox{\small{Gonzales p #1}}}}$}
+\newcommand{\verweis}[2]{ {\small (siehe auch \ref{#1}, #2 (S. \pageref{#1}))
+}}
+\newcommand{\subsubadd}[1]{\textcolor{black}{\mbox{#1}}}
+\newenvironment{liste}[0]{
+	\begin{list}{$\bullet$}{\setlength{\itemsep}{0cm}\setlength{\parsep}{0cm} \setlength{\topsep}{0cm}}}
+    {\end{list}}
+    
+\newcommand{\logd}[0]{\log_{10}}
+\newcommand{\subsubsubsection}[1]{\textbf{#1}}
+\newcommand{\matlab}[1]{\footnotesize{(Matlab: \texttt{#1})}\normalsize{}}
+
+\newenvironment{aufzaehlung}[0]{\begin{enumerate}{\setlength{\itemsep}{0cm}\setlength{\parsep}{0cm}\setlength{\topsep}{0cm}}} {\end{enumerate}}
+
+
+\newcommand{\abbHeight}[3]{
+	\begin{center}
+		\includegraphics[height=#2]{./bilder/#1} \\
+		#3
+    \end{center}
+}
+\newenvironment{compactList}[0]{
+  \begin{list}{$\bullet$}{\setlength{\itemsep}{0cm}\setlength{\parsep}{0cm} \setlength{\topsep}{0cm}}}
+    {\end{list}}
+
+\newcommand{\todo}[1]{\colorbox{red}{#1}}
+\newcommand{\hilight}[1]{\colorbox{yellow}{#1}}
+
+%\newcommand{\skriptsection}[2]{\section{#1 {\tiny Skript S. #2}}}
+%\newcommand{\skriptsubsection}[2]{\subsection{#1 {\tiny Skript S. #2}}}
+%\newcommand{\skriptsubsubsection}[2]{\subsubsection{#1 {\tiny Skript S. #2}}}
+%\renewcommand{\skriptsection}[2]{\section{#1 {\tiny Schaum S. #2}}}
+%\renewcommand{\skriptsubsection}[2]{\subsection{#1 {\tiny Schaum S. #2}}}
+%\renewcommand{\skriptsubsubsection}[2]{\subsubsection{#1 {\tiny Schaum S. #2}}}
+\newcommand{\skriptsection}[2]{\section{\texorpdfstring{#1 \gonzales{#2}}{#1}}}
+\newcommand{\skriptsubsection}[2]{\subsection{\texorpdfstring{#1 \gonzales{#2}}{#1}}}
+\newcommand{\skriptsubsubsection}[2]{\subsubsection{\texorpdfstring{#1 \gonzales{#2}}{#1}}}
+
+%%%%%%%%%%
+% Farben %
+%%%%%%%%%%
+\definecolor{black}{rgb}{0,0,0}
+\definecolor{red}{rgb}{1,0,0}
+\definecolor{white}{rgb}{1,1,1}
+\definecolor{grey}{rgb}{0.8,0.8,0.8}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mathematische Operatoren %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\median}{median}
+\DeclareMathOperator{\Lap}{Lap}
+\DeclareMathOperator{\ceil}{ceil}
+
+
+
+% Fouriertransformationen
+\unitlength1cm
+\newcommand{\FT}
+{
+\begin{picture}(1,0.5)
+\put(0.2,0.1){\circle{0.14}}\put(0.27,0.1){\line(1,0){0.5}}\put(0.77,0.1){\circle*{0.14}}
+\end{picture}
+}
+
+
+\newcommand{\IFT}
+{
+\begin{picture}(1,0.5)
+\put(0.2,0.1){\circle*{0.14}}\put(0.27,0.1){\line(1,0){0.45}}\put(0.77,0.1){\circle{0.14}}
+\end{picture}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Allgemeine Einstellungen %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%pdf info
+\hypersetup{pdfauthor={\authorinfo},pdftitle={\titleinfo},colorlinks=false}
+\author{\authorinfo}
+\title{\titleinfo}
+
+%Kopf- und Fusszeile
+\pagestyle{fancy}
+\fancyhf{}
+%Linien oben und unten
+\renewcommand{\headrulewidth}{0.5pt} 
+\renewcommand{\footrulewidth}{0.5pt}
+
+\fancyhead[L]{\titleinfo{ }- Summary}
+%Kopfzeile rechts bzw. aussen
+\fancyhead[R]{\today{ }- Page \thepage/\pageref{LastPage}}
+\fancyfoot[C]{\copyright{ }\authorinfo}
+
+% Einr�cken verhindern versuchen
+\setlength{\parindent}{0pt}
+
