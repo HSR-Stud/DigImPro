@@ -139,13 +139,13 @@
       Moments are statistical measures of the shape of a set of points. Due to its statistical
       nature, they are hardly variant to translation, rotation and scale.
       
-      2D moments of order $p+q$: $$m_{pq} = \sum_{x=0}^{M-1} \sum_{y=0}^{N-1} x^p y^p f(x,y)$$
+      2D moments of order $p+q$: $$m_{pq} = \sum_{x=0}^{M-1} \sum_{y=0}^{N-1} x^p y^q f(x,y)$$
       
   \end{minipage}
   \begin{minipage}{9cm}
     \textbf{Area based descriptors, continued}
     
-      2D \em central \em moments of order $p+q$: $$\mu_{pq} = \sum_{x=0}^{M-1} \sum_{y=0}^{N-1} (x-\bar{x})^p (y-\bar{y})^p f(x,y)$$
+      2D \em central \em moments of order $p+q$: $$\mu_{pq} = \sum_{x=0}^{M-1} \sum_{y=0}^{N-1} (x-\bar{x})^p (y-\bar{y})^q f(x,y)$$
       with $\bar{x}=\frac{m_{10}}{m_{00}}$ and $\bar{y}=\frac{m_{01}}{m_{00}}$ which are also the
       centroid coordinates.
       

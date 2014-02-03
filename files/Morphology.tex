@@ -136,7 +136,7 @@
   \begin{minipage}{9.2cm}
     \skriptsubsubsection{Geodesic Dilation}{656}
       Init: $D_G^{(n)}(F)=F$ \\
-      First it. (size 1): $D_G^{(1)}(F) = (F \oplus B) \cup G$\\
+      First it. (size 1): $D_G^{(1)}(F) = (F \oplus B) \cap G$\\
       Recursion (size $n$): $D_G^{(n)}(F) = D_G^{(1)}[D_G^{(n-1)}(F)]$
       
       \includegraphics[width=8cm]{./images/morphology_geodesic_dilation.png}
@@ -151,7 +151,7 @@
   \begin{minipage}{9.2cm}
     \skriptsubsubsection{Geodesic Erosion}{657}
       Init: $E_G^{(n)}(F)=F$ \\
-      First it. (size 1): $E_G^{(1)}(F) = (F \ominus B) \cap G$\\
+      First it. (size 1): $E_G^{(1)}(F) = (F \ominus B) \cup G$\\
       Recursion (size $n$): $E_G^{(n)}(F) = E_G^{(1)}[E_G^{(n-1)}(F)]$
         
       \includegraphics[width=8cm]{./images/morphology_geodesic_erosion.jpg}
